@@ -5,181 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forfait Évasion — Les Vols de Ralph</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800;900&family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --nuit: #141d33;
-    --indigo: #1f2e52;
-    --indigo-light: #33447a;
-    --or: #e4a94a;
-    --terre: #c74b2c;
-    --ecru: #f4eedd;
-    --ecru-dim: #cfc6ad;
-    --line: rgba(244,238,221,0.14);
-    --radius: 14px;
+    --bg: #101010;
+    --yellow: #f0e14a;
+    --orange: #d97b3f;
+    --maroon: #7a2a1c;
+    --chartreuse: #EDF069;
+    --warm-orange: #F0960E;
+    --text-light: #8fa3b8;
+    --text-dark: #2e2114;
+    --line: rgba(240,225,74,0.18);
   }
   *{box-sizing:border-box;}
-  body{margin:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--nuit);
-    color:var(--ecru);
-    font-family:'Work Sans', sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:'Fraunces', serif; margin:0; color:var(--ecru);}
-  .mono{font-family:'IBM Plex Mono', monospace;}
+  body{margin:0; background:var(--bg); color:var(--text-light); font-family:'Poppins', sans-serif;}
   a{color:inherit;}
   .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
 
   header{
     display:flex; align-items:center; justify-content:space-between;
-    max-width:900px; margin:0 auto; padding:26px 24px 10px;
+    max-width:900px; margin:0 auto; padding:22px 24px;
   }
-  .logo{font-family:'Fraunces', serif; font-weight:700; font-size:1.1rem; text-decoration:none;}
-  .back{
-    font-size:0.82rem; color:var(--ecru-dim); text-decoration:none;
-    border:1px solid var(--line); padding:8px 14px; border-radius:20px;
-  }
-  .back:hover{border-color:var(--or); color:var(--or);}
+  .logo{font-weight:900; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; color:var(--yellow); font-size:1rem;}
+  .back{font-size:0.78rem; color:var(--text-light); text-decoration:none; border:1px solid var(--line); padding:8px 14px; border-radius:20px;}
+  .back:hover{border-color:var(--yellow); color:var(--yellow);}
 
-  section{padding:56px 0; border-bottom:1px solid var(--line);}
-  section:last-of-type{border-bottom:none;}
+  section{padding:64px 0; text-align:center;}
+  section.alt{background:var(--yellow); color:var(--text-dark);}
+  section.alt .label{color:var(--maroon);}
+  section.alt p{color:var(--text-dark); opacity:0.85;}
 
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
-    letter-spacing:0.14em; text-transform:uppercase; color:var(--or);
-    display:block; margin-bottom:12px;
+  .label{
+    display:block; font-weight:800; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--orange); font-size:0.85rem; margin-bottom:14px;
   }
-  h1.big{font-size:clamp(1.8rem, 5vw, 3rem); line-height:1.15; margin-bottom:18px;}
-  h2.mid{font-size:clamp(1.5rem, 3.5vw, 2.2rem); line-height:1.2; margin-bottom:16px;}
-  p.lead{color:var(--ecru-dim); font-size:1.05rem; line-height:1.65; max-width:60ch;}
-  p.lead + p.lead{margin-top:14px;}
+  h1,h2{
+    font-family:'Lexend Deca', sans-serif;
+    font-weight:800; text-transform:uppercase; letter-spacing:0.02em;
+    line-height:1.25; margin:0 0 20px; color:var(--yellow);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.35);
+  }
+  h1{font-size:clamp(1.7rem, 5vw, 2.6rem);}
+  h2{font-size:clamp(1.4rem, 4vw, 2rem);}
+  section.alt h1, section.alt h2{color:var(--maroon); text-shadow: 0 2px 4px rgba(0,0,0,0.15);}
+  .hero-title{color:var(--chartreuse) !important;}
+  .hero-tagline{
+    font-family:'Lexend Deca', sans-serif; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.04em; color:var(--warm-orange); font-size:1.05rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.35);
+    max-width:none;
+  }
+  p{font-size:1rem; line-height:1.7; max-width:60ch; margin:0 auto 14px;}
 
-  .hero{
-    text-align:center;
-    background:linear-gradient(180deg, var(--indigo) 0%, var(--nuit) 100%);
-    border-radius:var(--radius);
-    padding:60px 24px;
-    margin:20px auto 0;
-    max-width:900px;
-  }
-  .hero .eyebrow{text-align:center;}
-  .hero h1{margin-bottom:16px;}
-  .hero p.lead{margin:0 auto 24px; text-align:center;}
   .board{
-    display:inline-block;
-    font-family:'IBM Plex Mono', monospace;
-    background:var(--nuit);
-    border:1px solid var(--or);
-    border-radius:8px;
-    padding:16px 20px;
-    font-size:0.8rem;
-    color:var(--or);
-    letter-spacing:0.05em;
-    margin-bottom:24px;
+    display:inline-block; font-family:monospace; background:#000;
+    border:1px solid var(--yellow); border-radius:8px; padding:16px 22px;
+    font-size:0.78rem; color:var(--yellow); letter-spacing:0.05em; margin-bottom:28px;
   }
   .board div{opacity:0.85;}
 
+  .scroll-chevron{
+    display:flex; align-items:center; justify-content:center;
+    width:56px; height:56px; margin:36px auto 0;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    background: rgba(240,225,74,0.12);
+    border: 1px solid var(--chartreuse);
+    text-decoration:none;
+    animation: bob 2.2s ease-in-out infinite;
+    transition: background 0.2s;
+  }
+  .scroll-chevron:hover{background: rgba(240,225,74,0.22);}
+  .scroll-chevron svg{width:20px; height:20px;}
+  @keyframes bob{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scroll-chevron{animation:none;}
+  }
+
   .price-example{
-    display:inline-block;
-    margin-top:8px;
-    font-family:'IBM Plex Mono', monospace;
-    background:rgba(228,169,74,0.1);
-    border:1px dashed var(--or);
-    border-radius:10px;
-    padding:14px 22px;
-    color:var(--or);
-    font-size:0.95rem;
-    text-align:center;
+    display:inline-block; margin-top:10px; font-family:monospace;
+    background:rgba(240,225,74,0.08); border:1px dashed var(--yellow);
+    border-radius:10px; padding:16px 24px; color:var(--yellow); font-size:0.95rem;
   }
 
-  .quote-card{
-    background:var(--indigo);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:28px;
-    margin-top:24px;
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:10px;}
+  .gallery div{
+    height:160px; background:linear-gradient(135deg, #3a2e1a, #1a1410);
+    display:flex; align-items:flex-end; padding:12px; font-weight:900; text-transform:uppercase;
+    color:#fff; font-size:0.95rem; letter-spacing:0.03em;
   }
-  .quote-card .name{font-family:'Fraunces', serif; color:var(--or); font-size:1.15rem; margin-bottom:10px;}
 
-  .stat-block{text-align:center; margin:20px auto 0;}
-
-  .plans{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-top:10px;
-  }
-  .plan{
-    border-radius:var(--radius);
-    padding:28px;
-    border:1px solid var(--line);
-  }
-  .plan.free{background:transparent; border:1px solid var(--line);}
-  .plan.paid{background:var(--indigo); border:1px solid var(--or);}
-  .plan .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
-    letter-spacing:0.1em; text-transform:uppercase; color:var(--or);
-    display:block; margin-bottom:10px;
-  }
-  .plan h3{font-size:1.4rem; margin-bottom:10px;}
-  .plan .price{font-family:'IBM Plex Mono', monospace; font-size:1.5rem; color:var(--or); margin:10px 0;}
-  .plan .price small{font-size:0.85rem; color:var(--ecru-dim); font-family:'Work Sans', sans-serif;}
-  .plan p{color:var(--ecru-dim); font-size:0.92rem; line-height:1.55;}
+  .plans{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; text-align:left;}
+  .plan{border-radius:10px; padding:28px; border:1px solid var(--line);}
+  .plan.free{background:#181818;}
+  .plan.paid{background:#000; border-color:var(--yellow);}
+  .plan .tag{display:block; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange); font-size:0.72rem; margin-bottom:10px;}
+  .plan h3{font-weight:900; text-transform:uppercase; color:var(--yellow); font-size:1.2rem; margin:0 0 10px;}
+  .plan .price{font-family:monospace; font-size:1.4rem; color:var(--yellow); margin:8px 0;}
+  .plan .price small{font-size:0.8rem; color:var(--text-light); font-family:'Poppins', sans-serif;}
+  .plan p{color:var(--text-light); font-size:0.9rem; margin:10px 0 0; max-width:none;}
   .plan .cta-btn{
-    display:inline-block; margin-top:18px; padding:12px 20px;
-    border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem;
-    text-align:center; width:100%;
+    display:block; margin-top:18px; padding:13px; border-radius:6px; text-decoration:none;
+    text-align:center; font-weight:800; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.04em;
   }
-  .plan.free .cta-btn{border:1px solid var(--indigo-light); color:var(--ecru);}
-  .plan.paid .cta-btn{background:var(--or); color:var(--nuit);}
+  .plan.free .cta-btn{border:1px solid var(--text-light); color:var(--text-light);}
+  .plan.paid .cta-btn{background:var(--yellow); color:#000;}
 
-  #inscription{
-    background:var(--indigo);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:36px;
-  }
+  #inscription{background:#000;}
+  form{max-width:480px; margin:0 auto; text-align:left;}
   .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
-  .field label{
-    font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--ecru-dim); font-family:'IBM Plex Mono', monospace;
+  .field label{font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-light); font-weight:600;}
+  .field input{
+    background:#181818; border:1px solid var(--line); color:#fff;
+    padding:12px 14px; border-radius:6px; font-family:'Poppins', sans-serif; font-size:0.95rem;
   }
-  .field input, .field select{
-    background:var(--nuit); border:1px solid var(--line); color:var(--ecru);
-    padding:11px 12px; border-radius:8px; font-family:'Work Sans', sans-serif; font-size:0.95rem;
-  }
-  .field input:focus, .field select:focus{
-    outline:none; border-color:var(--or); box-shadow:0 0 0 3px rgba(228,169,74,0.18);
-  }
+  .field input:focus{outline:none; border-color:var(--yellow);}
   .submit-btn{
-    width:100%; padding:14px; border:none; border-radius:9px;
-    background:var(--or); color:var(--nuit); font-weight:700;
-    font-size:0.95rem; cursor:pointer; letter-spacing:0.02em;
+    width:100%; padding:15px; border:none; border-radius:6px; background:var(--yellow); color:#000;
+    font-weight:900; text-transform:uppercase; letter-spacing:0.05em; font-size:0.9rem; cursor:pointer;
   }
-  .submit-btn:hover{opacity:0.92;}
-  .guarantee-note{
-    text-align:center; font-size:0.8rem; color:var(--ecru-dim); margin-top:14px;
-  }
+  .submit-btn:hover{opacity:0.9;}
+  .guarantee-note{font-size:0.8rem; color:var(--text-light); margin-top:16px;}
 
-  details{
-    background:transparent; border:1px solid var(--line); border-radius:10px;
-    padding:16px 20px; margin-top:24px;
-  }
-  summary{
-    cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:0.85rem;
-    letter-spacing:0.04em; color:var(--or);
-  }
-  details p{color:var(--ecru-dim); font-size:0.88rem; line-height:1.6; margin:14px 0;}
-  details h4{color:var(--ecru); font-size:0.92rem; margin:16px 0 6px;}
+  details{max-width:800px; margin:24px auto 0; text-align:left; border:1px solid var(--line); border-radius:8px; padding:16px 20px;}
+  summary{cursor:pointer; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--yellow); font-size:0.82rem;}
+  details h4{color:var(--orange); text-transform:uppercase; font-size:0.85rem; margin:18px 0 6px;}
+  details p{color:var(--text-light); font-size:0.85rem; line-height:1.65; max-width:none; margin:0 0 12px;}
 
-  footer{
-    text-align:center; padding:30px 24px 50px; color:var(--ecru-dim); font-size:0.78rem;
-  }
+  footer{text-align:center; padding:30px 24px 50px; color:var(--text-light); font-size:0.78rem;}
 
   @media (max-width:640px){
     .plans{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
@@ -190,119 +150,107 @@
   <a class="back" href="index.html">← Retour à l'accueil</a>
 </header>
 
-<!-- HERO -->
-<section class="hero wrap">
-  <div class="board mono">
+<section class="wrap">
+  <div class="board">
     <div>✈ VOLS ARRIVÉS</div>
     <div>PARIS CDG → ABIDJAN → COTONOU</div>
     <div>[COO] ARRIVAL FINALIZED</div>
   </div>
-  <span class="eyebrow">Europe — Afrique de l'Ouest</span>
-  <h1 class="big">L'Afrique de l'Ouest connectée à l'Europe,<br>les prix forts en moins.</h1>
-  <p class="lead">Trouvez les meilleurs tarifs pour vos retours aux sources.</p>
+  <span class="label">Europe — Afrique de l'Ouest</span>
+  <h1 class="hero-title">L'Afrique de l'Ouest connectée à l'Europe,<br>les prix forts en moins.</h1>
+  <p class="hero-tagline">Trouvez les meilleurs tarifs pour vos retours aux sources.</p>
+  <a class="scroll-chevron" href="#next" aria-label="Défiler vers la suite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#EDF069" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </a>
 </section>
 
-<!-- MARRE DE VOIR LES PRIX -->
-<section class="wrap" style="text-align:center;">
-  <span class="eyebrow">Rejoignez le club !</span>
-  <h2 class="mid">Marre de voir les prix des billets Europe – Afrique exploser ?</h2>
-  <p class="lead" style="margin:0 auto;">Nous connectons un vaste réseau de villes en Europe aux destinations phares et capitales économiques d'Afrique de l'Ouest (du Sénégal au Bénin, en passant par la Côte d'Ivoire et le Togo).</p>
-  <p class="lead" style="margin:14px auto 0;">D'où que vous partiez, voyager ne devrait pas coûter une fortune.</p>
-  <p class="lead" style="margin:14px auto 0;">Je traque pour vous les meilleures opportunités, les erreurs de tarifs et les combos inédits de compagnies aériennes pour vous faire économiser jusqu'à plusieurs centaines d'euros — soit des centaines de milliers de Francs CFA — sur vos billets.</p>
+<section class="wrap" id="next">
+  <span class="label">Rejoignez le club !</span>
+  <h2>Marre de voir les prix des billets Europe – Afrique exploser ?</h2>
+  <p>Nous connectons un vaste réseau de villes en Europe aux destinations phares et capitales économiques d'Afrique de l'Ouest (du Sénégal au Bénin, en passant par la Côte d'Ivoire et le Togo).</p>
+  <p>D'où que vous partiez, voyager ne devrait pas coûter une fortune.</p>
+  <p>Je traque pour vous les meilleures opportunités, les erreurs de tarifs et les combos inédits de compagnies aériennes pour vous faire économiser jusqu'à plusieurs centaines d'euros — soit des centaines de milliers de Francs CFA — sur vos billets.</p>
 </section>
 
-<!-- COMMENT ÇA MARCHE -->
 <section class="wrap">
-  <span class="eyebrow">Comment ça marche ?</span>
-  <h2 class="mid">Ralph déniche les meilleurs tarifs</h2>
-  <p class="lead">Moi c'est Ralph. Voyageur aux longs cours, j'ai développé une méthode pour dénicher les failles dans les prix des billets d'avion.</p>
-  <p class="lead" style="margin-top:14px;">Mon objectif ? Traquer les tarifs pour vous permettre de voyager l'esprit léger vers l'Afrique de l'Ouest.</p>
+  <span class="label">Comment ça marche ?</span>
+  <h2>Ralph déniche les meilleurs tarifs</h2>
+  <p>Moi c'est Ralph. Voyageur aux longs cours, j'ai développé une méthode pour dénicher les failles dans les prix des billets d'avion.</p>
+  <p>Mon objectif ? Traquer les tarifs pour vous permettre de voyager l'esprit léger vers l'Afrique de l'Ouest.</p>
 </section>
 
-<!-- LES COMPAGNIES BRADENT LEURS SIÈGES -->
+<section class="wrap alt">
+  <span class="label">J'en profite !</span>
+  <h2>Les compagnies bradent leurs sièges</h2>
+  <p>Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
+</section>
+
 <section class="wrap">
-  <span class="eyebrow">J'en profite !</span>
-  <h2 class="mid">Les compagnies bradent leurs sièges</h2>
-  <p class="lead">Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
-</section>
-
-<!-- STATS + EXEMPLE -->
-<section class="wrap stat-block">
-  <span class="eyebrow">Plus de 10 000 combinaisons</span>
-  <h2 class="mid">Analysées chaque jour pour trouver votre pépite</h2>
-  <div class="price-example mono">
-    BARCELONE → SÉNÉGAL<br>
-    112 € / 73 467 F CFA — aller<br>
-    en plein mois d'août !
+  <span class="label">Plus de 10 000 combinaisons</span>
+  <h2>Analysées chaque jour pour trouver votre pépite</h2>
+  <div class="price-example">
+    BARCELONE → SÉNÉGAL<br>112 € / 73 467 F CFA — aller<br>en plein mois d'août !
   </div>
-  <p class="lead" style="margin:20px auto 0;">Rejoignez les voyageurs qui choisissent Ralph pour économiser en toute simplicité !</p>
+  <p style="margin-top:20px;">Rejoignez les voyageurs qui choisissent Ralph pour économiser en toute simplicité !</p>
+  <div class="gallery">
+    <div>Afrique</div><div>de</div><div>l'Ouest</div>
+  </div>
 </section>
 
-<!-- PARTEZ À LA DÉCOUVERTE -->
-<section class="wrap" style="text-align:center;">
-  <h2 class="mid">Partez à la découverte de l'Afrique de l'Ouest, moins cher !</h2>
-  <p class="lead" style="margin:0 auto;">Que vous soyez étudiants, membres de la diaspora ou simplement passionnés par la découverte, l'Afrique de l'Ouest est accessible. Vous profitez pleinement de chaque voyage tout en optimisant votre budget.</p>
-</section>
-
-<!-- FORFAITS -->
 <section class="wrap">
-  <span class="eyebrow" style="text-align:center; display:block;">Nos formules</span>
-  <h2 class="mid" style="text-align:center;">Choisissez votre niveau d'évasion</h2>
+  <span class="label">Accès limité gratuit</span>
+  <h2>Forfait Liberté</h2>
+  <p>Nos meilleures opportunités de vol repérées en temps réel par nos technologies de veille.</p>
+</section>
+
+<section class="wrap alt">
+  <h2>Partez à la découverte de l'Afrique de l'Ouest, moins cher !</h2>
+  <p>Que vous soyez étudiants, membres de la diaspora ou simplement passionnés par la découverte, l'Afrique de l'Ouest est accessible. Vous profitez pleinement de chaque voyage tout en optimisant votre budget.</p>
+  <a class="cta-btn" style="display:inline-block; width:auto; padding:14px 26px; background:#000; color:var(--yellow); margin-top:10px;" href="#inscription">Cercle des voyageurs</a>
+</section>
+
+<section class="wrap">
+  <span class="label">Nos formules</span>
+  <h2>Choisissez votre niveau d'évasion</h2>
   <div class="plans">
     <div class="plan free">
       <span class="tag">Accès limité gratuit</span>
       <h3>Forfait Liberté</h3>
       <div class="price">0 €</div>
-      <p>Nos meilleures opportunités de vol repérées en temps réel par nos technologies de veille.</p>
+      <p>Nos meilleures opportunités de vol repérées en temps réel.</p>
       <a class="cta-btn" href="#inscription">Découvrir gratuitement</a>
     </div>
     <div class="plan paid">
       <span class="tag">Accès illimité</span>
       <h3>Forfait Évasion</h3>
       <div class="price">5 €<small>/mois</small></div>
-      <p class="mono" style="color:var(--ecru-dim); font-size:0.85rem;">3 280 FCFA/mois — facturé 60 € (39 360 FCFA) par an</p>
-      <p style="margin-top:12px;">Accédez à nos offres sans limite et recevez par email nos opportunités.</p>
+      <p style="font-family:monospace; font-size:0.8rem;">3 280 FCFA/mois — facturé 60 € (39 360 FCFA) /an</p>
+      <p>Accédez à nos offres sans limite et recevez par email nos opportunités.</p>
       <a class="cta-btn" href="#inscription">S'inscrire</a>
     </div>
   </div>
-  <p class="guarantee-note">⭐ Garantie de remboursement de 35 jours — voir conditions ci-dessous.</p>
 </section>
 
-<!-- FORMULAIRE D'INSCRIPTION -->
 <section class="wrap" id="inscription">
-  <span class="eyebrow" style="text-align:center; display:block;">Testez l'esprit tranquille !</span>
-  <h2 class="mid" style="text-align:center;">Rejoignez le Cercle des Voyageurs</h2>
-  <p class="lead" style="margin:0 auto 28px; text-align:center;">Nous dépassons les standards du marché (30 jours) pour vous offrir cinq jours de plus pour juger par vous-même ! Vous avez donc 35 jours d'essai, satisfait ou remboursé.</p>
+  <span class="label">Testez l'esprit tranquille !</span>
+  <h2>Rejoignez le Cercle des Voyageurs</h2>
+  <p>Nous dépassons les standards du marché (30 jours) pour vous offrir cinq jours de plus pour juger par vous-même ! Vous avez donc 35 jours d'essai, satisfait ou remboursé.</p>
 
   <form name="forfait-evasion" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci.html">
     <input type="hidden" name="form-name" value="forfait-evasion">
     <p style="display:none;"><label>Ne pas remplir : <input name="bot-field"></label></p>
-
-    <div class="field">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="field">
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" required>
-    </div>
-    <div class="field">
-      <label for="prenom">Prénom</label>
-      <input type="text" id="prenom" name="prenom" required>
-    </div>
-    <div class="field">
-      <label for="destination">Destination souhaitée</label>
-      <input type="text" id="destination" name="destination">
-    </div>
-    <div class="field">
-      <label for="pays">Pays de résidence</label>
-      <input type="text" id="pays" name="pays">
-    </div>
-    <button type="submit" class="submit-btn">S'inscrire →</button>
+    <div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" required></div>
+    <div class="field"><label for="nom">Nom</label><input type="text" id="nom" name="nom" required></div>
+    <div class="field"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" required></div>
+    <div class="field"><label for="destination">Destination souhaitée</label><input type="text" id="destination" name="destination"></div>
+    <div class="field"><label for="pays">Pays de résidence</label><input type="text" id="pays" name="pays"></div>
+    <button type="submit" class="submit-btn">Inscription →</button>
   </form>
+  <p class="guarantee-note">★ Garantie de remboursement de 35 jours — voir conditions ci-dessous.</p>
 </section>
 
-<!-- MENTIONS LÉGALES / GARANTIE -->
 <section class="wrap">
   <details>
     <summary>★ Garantie de remboursement de 35 jours — conditions d'éligibilité et délais</summary>
@@ -311,13 +259,13 @@
     <h4>Dates des vols</h4>
     <p>Cette proposition peut concerner un départ immédiat comme un départ différé dans les mois à venir (2, 3, 6 mois ou plus), dès lors que le tarif déniché est inférieur à la moyenne constatée sur le marché.</p>
     <h4>Fluctuation des tarifs</h4>
-    <p>Les prix des billets d'avion évoluent constamment. La proposition est considérée comme valide et vérifiée au moment exact de son envoi (l'historique et l'heure de notre envoi faisant foi). Nous ne pouvons être tenus responsables de l'expiration d'une offre ou d'une hausse des tarifs survenue après l'envoi.</p>
+    <p>Les prix des billets d'avion évoluent constamment. La proposition est considérée comme valide et vérifiée au moment exact de son envoi. Nous ne pouvons être tenus responsables de l'expiration d'une offre ou d'une hausse des tarifs survenue après l'envoi.</p>
     <h4>Délai strict de réclamation</h4>
-    <p>Pour être recevable, la demande de remboursement doit obligatoirement être formulée par écrit à notre support avant l'expiration stricte des 35 premiers jours d'abonnement. Passé ce délai, la garantie expire de plein droit et plus aucune demande de remboursement ne sera acceptée, indépendamment du nombre de propositions reçues. Dès lors qu'une (1) proposition valide vous a été partagée dans ce délai de 35 jours, ou que le délai de 35 jours est dépassé sans réclamation de votre part, le service est considéré comme pleinement rendu et validé.</p>
+    <p>Pour être recevable, la demande de remboursement doit obligatoirement être formulée par écrit à notre support avant l'expiration stricte des 35 premiers jours d'abonnement. Passé ce délai, la garantie expire de plein droit. Dès lors qu'une (1) proposition valide vous a été partagée, ou que le délai de 35 jours est dépassé sans réclamation, le service est considéré comme pleinement rendu et validé.</p>
     <h4>Droit applicable</h4>
-    <p>Le présent contrat est soumis aux lois en vigueur en République de Vanuatu, pays d'immatriculation de l'entreprise. Pour les clients internationaux (notamment dans l'Union Européenne ou dans l'espace CEDEAO/OHADA), les présentes conditions respectent les dispositions protectrices impératives et les exceptions légales de fourniture de services numériques applicables dans leurs zones géographiques respectives. En cas de contestation, le client s'engage à contacter prioritairement le support par email afin de rechercher une solution amiable. À défaut, les tribunaux compétents seront ceux de Port-Vila (Vanuatu).</p>
+    <p>Le présent contrat est soumis aux lois en vigueur en République de Vanuatu, pays d'immatriculation de l'entreprise. Pour les clients internationaux (UE, CEDEAO/OHADA), les présentes conditions respectent les dispositions protectrices impératives applicables dans leurs zones géographiques respectives. En cas de contestation, le client s'engage à contacter prioritairement le support par email. À défaut, les tribunaux compétents seront ceux de Port-Vila (Vanuatu).</p>
     <h4>Nature du service et exclusion de responsabilité</h4>
-    <p>Le site "Les Vols de Ralph" est un service exclusif d'information, de conseil et d'aide à la recherche de tarifs aériens. L'entreprise n'est pas une agence de voyages et ne procède à aucune réservation, émission ou vente de billets d'avion pour le compte de ses clients. Les transactions financières liées à l'achat des billets s'effectuent directement et exclusivement sur les plateformes officielles des compagnies aériennes ou des agences de réservation tierces. En conséquence, l'entreprise ne saurait être tenue responsable des modifications de tarifs, des annulations de vols, des litiges commerciaux ou de tout incident survenant entre le client et la compagnie aérienne émettrice du billet.</p>
+    <p>Le site "Les Vols de Ralph" est un service exclusif d'information, de conseil et d'aide à la recherche de tarifs aériens. L'entreprise n'est pas une agence de voyages et ne procède à aucune réservation, émission ou vente de billets d'avion. Les transactions s'effectuent directement sur les plateformes officielles des compagnies aériennes ou agences tierces. L'entreprise ne saurait être tenue responsable des modifications de tarifs, annulations, ou litiges entre le client et la compagnie émettrice.</p>
   </details>
 </section>
 
