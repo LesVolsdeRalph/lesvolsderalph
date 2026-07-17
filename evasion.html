@@ -40,10 +40,15 @@
     display:block; font-weight:800; letter-spacing:0.12em; text-transform:uppercase;
     color:var(--orange); font-size:0.85rem; margin-bottom:14px;
   }
-  .label-sm{font-size:1.36rem;}
+  .label-sm{font-size:1.36rem; color:#EDF069;}
   .label-club{color:#fff !important; font-size:1.05rem;}
   .label-comment{color:var(--yellow); font-size:1.05rem;}
   .label-profite{color:#F5890A !important;}
+  .label-match-h2{
+    font-family:'Lexend Deca', sans-serif; font-weight:800; text-transform:uppercase;
+    color:var(--yellow); letter-spacing:0.04em; font-size:1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
   h1,h2{
     font-family:'Lexend Deca', sans-serif;
     font-weight:800; text-transform:uppercase; letter-spacing:0.02em;
@@ -68,10 +73,37 @@
     letter-spacing:0.04em !important; color:#EDF069 !important; font-size:1.05rem !important;
     text-shadow: 0 2px 4px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.35);
   }
-  .bg-photo{max-width:100%; border-radius:10px; margin:24px auto 0; display:block; box-shadow:0 8px 24px rgba(0,0,0,0.4);}
   p{font-size:1rem; line-height:1.7; max-width:60ch; margin:0 auto 14px; color:#ABECF5B5;}
   .h2-spaced{font-weight:600 !important; letter-spacing:0.08em; color:var(--orange) !important;}
-  .inline-photo{max-width:100%; border-radius:10px; margin:28px auto 0; display:block; box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+
+  .hero-full{
+    position:relative; min-height:640px; display:flex; align-items:center; justify-content:center;
+    background:url('fond-bateaux.png') center/cover no-repeat; text-align:center; padding:64px 0;
+  }
+  .hero-full::before{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  }
+  .hero-overlay{position:relative; z-index:1;}
+
+  .full-bleed{
+    width:100%; display:block; height:50vh; min-height:280px; max-height:520px; object-fit:cover;
+  }
+
+  .gallery-full{display:grid; grid-template-columns:repeat(3,1fr); width:100%; margin-top:40px;}
+  .gallery-item{
+    position:relative; height:340px; background-size:cover; background-position:center;
+    display:flex; align-items:flex-start; justify-content:center; padding:22px 16px;
+  }
+  .gallery-item::before{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0) 45%);
+  }
+  .gallery-item span{
+    position:relative; z-index:1; font-family:'Lexend Deca', sans-serif; font-weight:900;
+    text-transform:uppercase; color:#fff; font-size:1.1rem; letter-spacing:0.04em;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
 
   .board{
     display:inline-block; font-family:monospace; background:#000;
@@ -154,7 +186,10 @@
 
   @media (max-width:640px){
     .plans{grid-template-columns:1fr;}
-    .gallery{grid-template-columns:1fr 1fr;}
+    .hero-full{min-height:520px; padding:48px 0;}
+    .full-bleed{height:38vh; min-height:220px;}
+    .gallery-full{grid-template-columns:1fr;}
+    .gallery-item{height:260px;}
   }
 </style>
 </head>
@@ -165,68 +200,76 @@
   <a class="back" href="index.html">← Retour à l'accueil</a>
 </header>
 
-<section class="wrap">
-  <div class="board">
-    <div>✈ VOLS ARRIVÉS</div>
-    <div>PARIS CDG → ABIDJAN → COTONOU</div>
-    <div>[COO] ARRIVAL FINALIZED</div>
+<section class="hero-full">
+  <div class="hero-overlay wrap">
+    <span class="label label-sm">Europe — Afrique de l'Ouest</span>
+    <h1 class="hero-title">L'Afrique de l'Ouest connectée à l'Europe,<br>les prix forts en moins.</h1>
+    <p class="hero-tagline">Trouvez les meilleurs tarifs pour vos retours aux sources.</p>
+    <a class="scroll-chevron" href="#next" aria-label="Défiler vers la suite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#EDF069" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
   </div>
-  <img class="bg-photo" src="fond-bateaux.png" alt="Bateaux">
-  <span class="label label-sm">Europe — Afrique de l'Ouest</span>
-  <h1 class="hero-title">L'Afrique de l'Ouest connectée à l'Europe,<br>les prix forts en moins.</h1>
-  <p class="hero-tagline">Trouvez les meilleurs tarifs pour vos retours aux sources.</p>
-  <a class="scroll-chevron" href="#next" aria-label="Défiler vers la suite">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#EDF069" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
-  </a>
 </section>
 
 <section class="wrap" id="next">
-  <span class="label label-club">Rejoignez le club !</span>
   <h2 class="like-tagline">Marre de voir les prix des billets Europe – Afrique exploser !</h2>
+  <span class="label label-club">Rejoignez le club !</span>
   <p>Nous connectons un vaste réseau de villes en Europe aux destinations phares et capitales économiques d'Afrique de l'Ouest (du Sénégal au Bénin, en passant par la Côte d'Ivoire et le Togo).*</p>
   <p>D'où que vous partiez, voyager ne devrait pas coûter une fortune.</p>
   <p>Je traque pour vous les meilleures opportunités, les erreurs de tarifs et les combos inédits de compagnies aériennes pour vous faire économiser jusqu'à plusieurs centaines d'euros — soit des centaines de milliers de Francs CFA — sur vos billets.</p>
 </section>
 
-<section class="wrap">
-  <img class="inline-photo" src="plage-drone.jpg" alt="Plage vue de drone" style="margin-bottom:28px;">
-  <span class="label label-comment">Comment ça marche ?</span>
-  <h2 class="h2-spaced">Ralph déniche les meilleurs tarifs</h2>
-  <p>Moi c'est Ralph. Voyageur aux longs cours, j'ai développé une méthode pour dénicher les failles dans les prix des billets d'avion.</p>
-  <p>Mon objectif ? Traquer les tarifs pour vous permettre de voyager l'esprit léger vers l'Afrique de l'Ouest.</p>
-  <img class="inline-photo" src="Plage_du_Ghana.jpg" alt="Plage du Ghana">
+<section>
+  <img class="full-bleed" src="plage-drone.jpg" alt="Plage vue de drone">
+  <div class="wrap" style="padding-top:40px;">
+    <span class="label label-comment">Comment ça marche ?</span>
+    <h2 class="h2-spaced">Ralph déniche les meilleurs tarifs</h2>
+    <p>Moi c'est Ralph. Voyageur aux longs cours, j'ai développé une méthode pour dénicher les failles dans les prix des billets d'avion.</p>
+    <p>Mon objectif ? Traquer les tarifs pour vous permettre de voyager l'esprit léger vers l'Afrique de l'Ouest.</p>
+  </div>
+  <img class="full-bleed" src="Plage_du_Ghana.jpg" alt="Plage du Ghana" style="margin-top:40px;">
 </section>
 
-<section class="wrap alt">
+<section class="wrap alt" style="padding:110px 0;">
   <span class="label label-profite">J'en profite !</span>
   <h2>Les compagnies bradent leurs sièges</h2>
   <p>Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
 </section>
 
-<section class="wrap">
-  <span class="label">Plus de 10 000 combinaisons</span>
-  <h2>Analysées chaque jour pour trouver votre pépite</h2>
-  <div class="price-example">
-    BARCELONE → SÉNÉGAL<br>112 € / 73 467 F CFA — aller<br>en plein mois d'août !
+<section>
+  <div class="wrap">
+    <span class="label label-match-h2">Plus de 10 000 combinaisons</span>
+    <h2>Analysées chaque jour pour trouver votre pépite</h2>
+    <div class="price-example">
+      BARCELONE → SÉNÉGAL<br>112 € / 73 467 F CFA — aller<br>en plein mois d'août !
+    </div>
+    <p style="margin-top:20px;">Rejoignez les voyageurs qui choisissent Ralph pour économiser en toute simplicité !</p>
   </div>
-  <p style="margin-top:20px;">Rejoignez les voyageurs qui choisissent Ralph pour économiser en toute simplicité !</p>
-  <div class="gallery">
-    <div>Afrique</div><div>de</div><div>l'Ouest</div>
+  <div class="gallery-full">
+    <div class="gallery-item" style="background-image:url('Togo_Mall_3.jpg');"><span>Afrique</span></div>
+    <div class="gallery-item" style="background-image:url('Famille.jpg'); background-position:top center;"><span>De</span></div>
+    <div class="gallery-item" style="background-image:url('Lome_Togo_Beach_Road.jpg');"><span>L'Ouest</span></div>
   </div>
 </section>
 
-<section class="wrap">
-  <span class="label">Accès limité gratuit</span>
-  <h2>Forfait Liberté</h2>
-  <p>Nos meilleures opportunités de vol repérées en temps réel par nos technologies de veille.</p>
+<section>
+  <div class="wrap">
+    <h2>Forfait Liberté</h2>
+    <span class="label" style="margin-top:6px;">Accès limité gratuit</span>
+    <p>Nos meilleures opportunités de vol repérées en temps réel par nos technologies de veille.</p>
+  </div>
+  <img class="full-bleed" src="sunset.jpg" alt="Coucher de soleil" style="margin-top:40px;">
 </section>
 
-<section class="wrap alt">
-  <h2>Partez à la découverte de l'Afrique de l'Ouest, moins cher !</h2>
-  <p>Que vous soyez étudiants, membres de la diaspora ou simplement passionnés par la découverte, l'Afrique de l'Ouest est accessible. Vous profitez pleinement de chaque voyage tout en optimisant votre budget.</p>
-  <a class="cta-btn" style="display:inline-block; width:auto; padding:14px 26px; background:#000; color:var(--yellow); margin-top:10px;" href="#inscription">Cercle des voyageurs</a>
+<section class="alt">
+  <div class="wrap">
+    <h2 style="color:#000;">Partez à la découverte de l'Afrique de l'Ouest, <span style="color:var(--maroon);">moins cher !</span></h2>
+    <p>Que vous soyez étudiants, membres de la diaspora ou simplement passionnés par la découverte, l'Afrique de l'Ouest est accessible. Vous profitez pleinement de chaque voyage tout en optimisant votre budget.</p>
+    <a class="cta-btn" style="display:inline-block; width:auto; padding:14px 26px; background:#000; color:var(--yellow); margin-top:10px; text-transform:uppercase;" href="#inscription">Cercle des voyageurs</a>
+  </div>
+  <img class="full-bleed" src="vue-dessus.jpg" alt="Vue aérienne" style="margin-top:40px;">
 </section>
 
 <section class="wrap">
