@@ -78,7 +78,7 @@
 
   .hero-full{
     position:relative; min-height:640px; display:flex; align-items:center; justify-content:center;
-    background:url('fond-bateaux.png') center/cover no-repeat; text-align:center; padding:64px 0;
+    background:url('fond-bateaux.jpg') center/cover no-repeat; text-align:center; padding:64px 0;
   }
   .hero-full::before{
     content:''; position:absolute; inset:0;
@@ -87,7 +87,7 @@
   .hero-overlay{position:relative; z-index:1;}
 
   .full-bleed{
-    width:100%; display:block; height:50vh; min-height:280px; max-height:520px; object-fit:cover;
+    width:100%; display:block; height:auto;
   }
 
   .gallery-full{display:grid; grid-template-columns:repeat(3,1fr); width:100%; margin-top:40px;}
@@ -187,7 +187,6 @@
   @media (max-width:640px){
     .plans{grid-template-columns:1fr;}
     .hero-full{min-height:520px; padding:48px 0;}
-    .full-bleed{height:38vh; min-height:220px;}
     .gallery-full{grid-template-columns:1fr;}
     .gallery-item{height:260px;}
   }
