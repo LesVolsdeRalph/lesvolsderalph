@@ -40,8 +40,8 @@
     display:block; font-weight:800; letter-spacing:0.12em; text-transform:uppercase;
     color:var(--orange); font-size:0.85rem; margin-bottom:14px;
   }
-  .label-sm{font-size:1.36rem; color:#EDF069;}
-  .label-club{color:#fff !important; font-size:1.05rem;}
+  .label-sm{font-size:1.36rem; color:#EDF069; text-shadow:0 2px 4px rgba(0,0,0,0.6), 0 6px 16px rgba(0,0,0,0.4);}
+  .label-club{color:#fff !important; font-size:1.05rem; font-weight:500 !important;}
   .label-comment{color:var(--yellow); font-size:1.05rem;}
   .label-profite{color:#F5890A !important;}
   .label-match-h2{
@@ -74,15 +74,11 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.35);
   }
   p{font-size:1rem; line-height:1.7; max-width:60ch; margin:0 auto 14px; color:#ABECF5B5;}
-  .h2-spaced{font-weight:600 !important; letter-spacing:0.08em; color:var(--orange) !important;}
+  .h2-spaced{font-weight:600 !important; letter-spacing:0.08em; color:#F0960E !important;}
 
   .hero-full{
     position:relative; min-height:640px; display:flex; align-items:center; justify-content:center;
     background:url('fond-bateaux.jpg') center/cover no-repeat; text-align:center; padding:64px 0;
-  }
-  .hero-full::before{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
   }
   .hero-overlay{position:relative; z-index:1;}
 
@@ -90,19 +86,19 @@
     width:100%; display:block; height:auto;
   }
 
-  .gallery-full{display:grid; grid-template-columns:repeat(3,1fr); width:100%; margin-top:40px;}
+  .gallery-full{display:grid; grid-template-columns:repeat(3,1fr); width:100%; margin-top:64px;}
   .gallery-item{
     position:relative; height:340px; background-size:cover; background-position:center;
-    display:flex; align-items:flex-start; justify-content:center; padding:22px 16px;
+    display:flex; align-items:center; justify-content:center; padding:22px 16px;
   }
   .gallery-item::before{
     content:''; position:absolute; inset:0;
-    background:linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0) 45%);
+    background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
   }
   .gallery-item span{
-    position:relative; z-index:1; font-family:'Lexend Deca', sans-serif; font-weight:900;
-    text-transform:uppercase; color:#fff; font-size:1.1rem; letter-spacing:0.04em;
-    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    position:relative; z-index:1; font-family:'Lexend Deca', sans-serif; font-weight:400;
+    text-transform:uppercase; color:#fff; font-size:clamp(2rem, 5vw, 3rem); letter-spacing:0.04em;
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
   }
 
   .board{
@@ -132,6 +128,12 @@
     .scroll-chevron{animation:none;}
   }
 
+  .cta-btn-cercle{
+    display:inline-block; width:auto; padding:14px 26px; background:#000; color:var(--yellow);
+    margin-top:16px; text-transform:uppercase; text-decoration:none; border-radius:6px;
+    font-weight:800; letter-spacing:0.04em; font-size:0.85rem; transition:background 0.2s;
+  }
+  .cta-btn-cercle:hover{background:#8A320C;}
   .price-example{
     display:inline-block; margin-top:10px; font-family:monospace;
     background:rgba(240,225,74,0.08); border:1px dashed var(--yellow);
@@ -150,16 +152,19 @@
   .plan.free{background:#181818;}
   .plan.paid{background:#000; border-color:var(--yellow);}
   .plan .tag{display:block; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange); font-size:0.72rem; margin-bottom:10px;}
-  .plan h3{font-weight:900; text-transform:uppercase; color:var(--yellow); font-size:1.2rem; margin:0 0 10px;}
+  .plan h3{font-weight:500; text-transform:uppercase; color:var(--yellow); font-size:1.2rem; margin:0 0 10px;}
   .plan .price{font-family:monospace; font-size:1.4rem; color:var(--yellow); margin:8px 0;}
   .plan .price small{font-size:0.8rem; color:var(--text-light); font-family:'Poppins', sans-serif;}
   .plan p{color:var(--text-light); font-size:0.9rem; margin:10px 0 0; max-width:none;}
   .plan .cta-btn{
     display:block; margin-top:18px; padding:13px; border-radius:6px; text-decoration:none;
     text-align:center; font-weight:800; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.04em;
+    transition:background 0.2s, color 0.2s, border-color 0.2s;
   }
   .plan.free .cta-btn{border:1px solid var(--text-light); color:var(--text-light);}
+  .plan.free .cta-btn:hover{background:#EDF069; border-color:#EDF069; color:#000;}
   .plan.paid .cta-btn{background:var(--yellow); color:#000;}
+  .plan.paid .cta-btn:hover{background:#F5890A; color:#000;}
 
   #inscription{background:#000;}
   form{max-width:480px; margin:0 auto; text-align:left;}
@@ -174,7 +179,7 @@
     width:100%; padding:15px; border:none; border-radius:6px; background:var(--yellow); color:#000;
     font-weight:900; text-transform:uppercase; letter-spacing:0.05em; font-size:0.9rem; cursor:pointer;
   }
-  .submit-btn:hover{opacity:0.9;}
+  .submit-btn:hover{background:#F5890A;}
   .guarantee-note{font-size:0.8rem; color:var(--text-light); margin-top:16px;}
 
   details{max-width:800px; margin:24px auto 0; text-align:left; border:1px solid var(--line); border-radius:8px; padding:16px 20px;}
@@ -212,7 +217,7 @@
   </div>
 </section>
 
-<section class="wrap" id="next">
+<section class="wrap" id="next" style="padding-top:110px;">
   <h2 class="like-tagline">Marre de voir les prix des billets Europe – Afrique exploser !</h2>
   <span class="label label-club">Rejoignez le club !</span>
   <p>Nous connectons un vaste réseau de villes en Europe aux destinations phares et capitales économiques d'Afrique de l'Ouest (du Sénégal au Bénin, en passant par la Côte d'Ivoire et le Togo).*</p>
@@ -220,20 +225,20 @@
   <p>Je traque pour vous les meilleures opportunités, les erreurs de tarifs et les combos inédits de compagnies aériennes pour vous faire économiser jusqu'à plusieurs centaines d'euros — soit des centaines de milliers de Francs CFA — sur vos billets.</p>
 </section>
 
-<section>
+<section style="padding-bottom:0;">
   <img class="full-bleed" src="plage-drone.jpg" alt="Plage vue de drone">
-  <div class="wrap" style="padding-top:40px;">
+  <div class="wrap" style="padding-top:64px;">
     <span class="label label-comment">Comment ça marche ?</span>
     <h2 class="h2-spaced">Ralph déniche les meilleurs tarifs</h2>
     <p>Moi c'est Ralph. Voyageur aux longs cours, j'ai développé une méthode pour dénicher les failles dans les prix des billets d'avion.</p>
     <p>Mon objectif ? Traquer les tarifs pour vous permettre de voyager l'esprit léger vers l'Afrique de l'Ouest.</p>
   </div>
-  <img class="full-bleed" src="Plage_du_Ghana.jpg" alt="Plage du Ghana" style="margin-top:40px;">
+  <img class="full-bleed" src="Plage_du_Ghana.jpg" alt="Plage du Ghana" style="margin-top:64px;">
 </section>
 
 <section class="wrap alt" style="padding:110px 0;">
   <span class="label label-profite">J'en profite !</span>
-  <h2>Les compagnies bradent leurs sièges</h2>
+  <h2 style="color:#8A320C;">Les compagnies bradent leurs sièges</h2>
   <p>Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
 </section>
 
@@ -253,30 +258,31 @@
   </div>
 </section>
 
-<section>
+<section style="padding-bottom:0;">
   <div class="wrap">
-    <h2>Forfait Liberté</h2>
-    <span class="label" style="margin-top:6px;">Accès limité gratuit</span>
+    <h2 style="font-weight:500;">Forfait Liberté</h2>
+    <span class="label" style="margin-top:6px; color:#F5890A;">Accès limité gratuit</span>
     <p>Nos meilleures opportunités de vol repérées en temps réel par nos technologies de veille.</p>
+    <a class="cta-btn-cercle" href="#formules">Cercle de voyageurs</a>
   </div>
-  <img class="full-bleed" src="sunset.jpg" alt="Coucher de soleil" style="margin-top:40px;">
+  <img class="full-bleed" src="sunset.jpg" alt="Coucher de soleil" style="margin-top:64px;">
 </section>
 
-<section class="alt">
+<section class="alt" style="padding-bottom:0;">
   <div class="wrap">
-    <h2 style="color:#000;">Partez à la découverte de l'Afrique de l'Ouest, <span style="color:var(--maroon);">moins cher !</span></h2>
+    <h2 style="color:#000;">Partez à la découverte de l'Afrique de l'Ouest<br><span style="color:#8A320C; font-weight:600;">moins cher !</span></h2>
     <p>Que vous soyez étudiants, membres de la diaspora ou simplement passionnés par la découverte, l'Afrique de l'Ouest est accessible. Vous profitez pleinement de chaque voyage tout en optimisant votre budget.</p>
-    <a class="cta-btn" style="display:inline-block; width:auto; padding:14px 26px; background:#000; color:var(--yellow); margin-top:10px; text-transform:uppercase;" href="#inscription">Cercle des voyageurs</a>
+    <a class="cta-btn-cercle" href="#inscription">Cercle des voyageurs</a>
   </div>
-  <img class="full-bleed" src="vue-dessus.jpg" alt="Vue aérienne" style="margin-top:40px;">
+  <img class="full-bleed" src="vue-dessus.jpg" alt="Vue aérienne" style="margin-top:64px;">
 </section>
 
-<section class="wrap">
-  <span class="label">Nos formules</span>
+<section class="wrap" id="formules">
+  <span class="label" style="margin-top:30px; color:#F5890A; font-weight:500;">Nos formules</span>
   <h2>Choisissez votre niveau d'évasion</h2>
   <div class="plans">
     <div class="plan free">
-      <span class="tag">Accès limité gratuit</span>
+      <span class="tag" style="color:#F5890A;">Accès limité gratuit</span>
       <h3>Forfait Liberté</h3>
       <div class="price">0 €</div>
       <p>Nos meilleures opportunités de vol repérées en temps réel.</p>
@@ -293,8 +299,8 @@
   </div>
 </section>
 
-<section class="wrap" id="inscription">
-  <span class="label">Testez l'esprit tranquille !</span>
+<section class="wrap" id="inscription" style="padding-top:100px;">
+  <span class="label" style="margin-top:30px; color:#F5890A;">Testez l'esprit tranquille !</span>
   <h2>Rejoignez le Cercle des Voyageurs</h2>
   <p>Nous dépassons les standards du marché (30 jours) pour vous offrir cinq jours de plus pour juger par vous-même ! Vous avez donc 35 jours d'essai, satisfait ou remboursé.</p>
 
