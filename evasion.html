@@ -76,11 +76,14 @@
   p{font-size:1rem; line-height:1.7; max-width:60ch; margin:0 auto 14px; color:#ABECF5B5;}
   .h2-spaced{font-weight:600 !important; letter-spacing:0.08em; color:#F0960E !important;}
 
-  .hero-full{
-    position:relative; min-height:640px; display:flex; align-items:center; justify-content:center;
-    background:url('fond-bateaux.jpg') center/cover no-repeat; text-align:center; padding:64px 0;
+  .hero-full{position:relative; text-align:center;}
+  .hero-bg-img{width:100%; height:auto; display:block;}
+  .hero-top{
+    position:absolute; top:7%; left:0; right:0; z-index:1; padding:0 24px;
   }
-  .hero-overlay{position:relative; z-index:1;}
+  .hero-bottom{
+    position:absolute; top:64%; left:0; right:0; z-index:1; padding:0 24px;
+  }
 
   .full-bleed{
     width:100%; display:block; height:auto;
@@ -97,7 +100,7 @@
   }
   .gallery-item span{
     position:relative; z-index:1; font-family:'Lexend Deca', sans-serif; font-weight:400;
-    text-transform:uppercase; color:#fff; font-size:clamp(2rem, 5vw, 3rem); letter-spacing:0.04em;
+    text-transform:uppercase; color:#fff; font-size:clamp(1.7rem, 4.5vw, 2.6rem); letter-spacing:0.35em;
     text-shadow:0 2px 8px rgba(0,0,0,0.7);
   }
 
@@ -191,7 +194,6 @@
 
   @media (max-width:640px){
     .plans{grid-template-columns:1fr;}
-    .hero-full{min-height:520px; padding:48px 0;}
     .gallery-full{grid-template-columns:1fr;}
     .gallery-item{height:260px;}
   }
@@ -205,9 +207,12 @@
 </header>
 
 <section class="hero-full">
-  <div class="hero-overlay wrap">
+  <img class="hero-bg-img" src="fond-bateaux.jpg" alt="Bateaux sur la plage">
+  <div class="hero-top wrap">
     <span class="label label-sm">Europe — Afrique de l'Ouest</span>
     <h1 class="hero-title">L'Afrique de l'Ouest connectée à l'Europe,<br>les prix forts en moins.</h1>
+  </div>
+  <div class="hero-bottom wrap">
     <p class="hero-tagline">Trouvez les meilleurs tarifs pour vos retours aux sources.</p>
     <a class="scroll-chevron" href="#next" aria-label="Défiler vers la suite">
       <svg viewBox="0 0 24 24" fill="none" stroke="#EDF069" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -236,10 +241,12 @@
   <img class="full-bleed" src="Plage_du_Ghana.jpg" alt="Plage du Ghana" style="margin-top:64px;">
 </section>
 
-<section class="wrap alt" style="padding:110px 0;">
-  <span class="label label-profite">J'en profite !</span>
-  <h2 style="color:#8A320C;">Les compagnies bradent leurs sièges</h2>
-  <p>Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
+<section class="alt" style="padding:110px 0;">
+  <div class="wrap">
+    <span class="label label-profite">J'en profite !</span>
+    <h2 style="color:#8A320C;">Les compagnies bradent leurs sièges</h2>
+    <p>Quand les compagnies aériennes cassent les prix sur les liaisons entre la France & l'Afrique de l'Ouest, je suis aux aguets. Je ne compte pas sur des erreurs de système, je traque en continu les promotions les plus intéressantes pour vous faire profiter d'économies incroyables !</p>
+  </div>
 </section>
 
 <section>
