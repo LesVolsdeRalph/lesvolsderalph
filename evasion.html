@@ -79,10 +79,10 @@
   .hero-full{position:relative; text-align:center;}
   .hero-bg-img{width:100%; height:auto; display:block;}
   .hero-top{
-    position:absolute; top:7%; left:0; right:0; z-index:1; padding:0 24px;
+    position:absolute; top:11%; left:0; right:0; z-index:1; padding:0 24px;
   }
   .hero-bottom{
-    position:absolute; top:64%; left:0; right:0; z-index:1; padding:0 24px;
+    position:absolute; bottom:4%; left:0; right:0; z-index:1; padding:0 24px;
   }
 
   .full-bleed{
@@ -196,6 +196,10 @@
     .plans{grid-template-columns:1fr;}
     .gallery-full{grid-template-columns:1fr;}
     .gallery-item{height:260px;}
+    .hero-full{min-height:600px;}
+    .hero-bg-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+    .hero-top{top:9%;}
+    .hero-bottom{bottom:7%;}
   }
 </style>
 </head>
