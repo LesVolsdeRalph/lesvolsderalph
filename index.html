@@ -48,6 +48,8 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    flex-wrap:wrap;
+    row-gap:10px;
     max-width:1100px;
     margin:0 auto;
     padding:28px 24px 10px;
@@ -61,11 +63,16 @@
     font-size:1.15rem;
     letter-spacing:0.01em;
   }
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 22px;
+  }
   nav a{
     font-size:0.85rem;
     color:var(--ecru-dim);
     text-decoration:none;
-    margin-left:22px;
+    margin-left:0;
   }
   nav a:hover{color:var(--or);}
 
@@ -86,8 +93,7 @@
   }
   h1{
     font-size:clamp(1.3rem, 3.6vw, 3.4rem);
-    line-height:1.06;
-    white-space:nowrap;
+    line-height:1.15;
     margin-bottom:16px;
   }
   h1 em{
@@ -119,6 +125,7 @@
     gap:16px 12px;
     position:relative;
     align-items:end;
+    min-width:0;
   }
   .field-grid .trip-toggle{
     grid-column:1 / -1;
@@ -144,6 +151,7 @@
     display:flex;
     flex-direction:column;
     gap:6px;
+    min-width:0;
   }
   .field label{
     font-size:0.72rem;
@@ -161,6 +169,9 @@
     font-family:'Work Sans', sans-serif;
     font-size:0.95rem;
     outline:none;
+    width:100%;
+    max-width:100%;
+    min-width:0;
   }
   select:focus, input:focus{
     border-color:var(--or);
@@ -173,7 +184,8 @@
   }
   .trip-toggle button{
     flex:1;
-    padding:9px;
+    min-width:0;
+    padding:9px 6px;
     border-radius:8px;
     border:1px solid var(--line);
     background:transparent;
@@ -182,6 +194,9 @@
     font-size:0.78rem;
     letter-spacing:0.05em;
     cursor:pointer;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
   .trip-toggle button.active{
     background:var(--or);
@@ -297,8 +312,9 @@
     .field-grid{grid-template-columns:1fr;}
     .swap-btn{margin:0 auto; transform:rotate(90deg);}
     .swap-btn:hover{transform:rotate(270deg);}
-    nav a{margin-left:14px;}
-    nav{font-size:0.8rem;}
+    header{justify-content:center; text-align:center;}
+    nav{justify-content:center; gap:4px 14px;}
+    nav a{font-size:0.8rem;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -472,8 +488,13 @@
       </div>
 
       <div class="field">
-        <label for="pax">Passagers</label>
-        <input type="number" id="pax" min="1" max="9" value="1">
+        <label for="pax-adults">Adultes</label>
+        <input type="number" id="pax-adults" min="1" max="9" value="1">
+      </div>
+
+      <div class="field">
+        <label for="pax-children">Enfants</label>
+        <input type="number" id="pax-children" min="0" max="8" value="0">
       </div>
     </div>
 
@@ -542,7 +563,8 @@
   });
   const departInput = document.getElementById('depart-date');
   const returnInput = document.getElementById('return-date');
-  const paxInput = document.getElementById('pax');
+  const paxAdultsInput = document.getElementById('pax-adults');
+  const paxChildrenInput = document.getElementById('pax-children');
   const returnField = document.getElementById('return-field');
   const tripButtons = document.querySelectorAll('.trip-toggle button');
 
@@ -580,13 +602,15 @@
     const dest = destSel.value;
     const depart = departInput.value;
     const ret = returnInput.value;
-    const pax = paxInput.value || 1;
+    const adults = parseInt(paxAdultsInput.value, 10) || 1;
+    const children = parseInt(paxChildrenInput.value, 10) || 0;
+    const pax = adults + children;
     const roundTrip = tripType === 'aller-retour';
 
     const params = new URLSearchParams({
       origin, dest, depart,
       ret: roundTrip ? ret : '',
-      pax, trip: tripType
+      pax, adults, children, trip: tripType
     });
 
     const btn = document.getElementById('btn-decollage');
@@ -594,7 +618,7 @@
     btn.textContent = AFRIQUE_CODES.includes(dest) ? "Décollage pour l'Afrique" : "Décollage vers l'Europe";
   }
 
-  [originSel, destSel, departInput, returnInput, paxInput].forEach(el =>
+  [originSel, destSel, departInput, returnInput, paxAdultsInput, paxChildrenInput].forEach(el =>
     el.addEventListener('change', updateLinks)
   );
 
