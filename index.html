@@ -63,6 +63,13 @@
     font-size:1.15rem;
     letter-spacing:0.01em;
   }
+  .logo-img{
+    height:34px;
+    width:34px;
+    object-fit:contain;
+    display:block;
+  }
+  .logo span{color:var(--or);}
   nav{
     display:flex;
     flex-wrap:wrap;
@@ -129,6 +136,15 @@
   }
   .field-grid .trip-toggle{
     grid-column:1 / -1;
+  }
+  .field-grid .pax-row{
+    grid-column:1 / -1;
+    display:flex;
+    gap:16px;
+  }
+  .field-grid .pax-row .field{
+    flex:1;
+    min-width:0;
   }
   .swap-btn{
     width:38px;
@@ -325,7 +341,7 @@
 <body>
 
 <header>
-  <div class="logo">Les&nbsp;Vols&nbsp;de&nbsp;Ralph</div>
+  <div class="logo"><img class="logo-img" src="logo-tete.png" alt="Logo Les Vols de Ralph"><span>Les&nbsp;Vols&nbsp;de&nbsp;Ralph</span></div>
   <nav>
     <a href="#recherche">Recherche</a>
     <a href="#destinations">Destinations</a>
@@ -487,14 +503,16 @@
         <input type="date" id="return-date">
       </div>
 
-      <div class="field">
-        <label for="pax-adults">Adultes</label>
-        <input type="number" id="pax-adults" min="1" max="9" value="1">
-      </div>
+      <div class="pax-row">
+        <div class="field">
+          <label for="pax-adults">Adultes</label>
+          <input type="number" id="pax-adults" min="1" max="9" value="1">
+        </div>
 
-      <div class="field">
-        <label for="pax-children">Enfants</label>
-        <input type="number" id="pax-children" min="0" max="8" value="0">
+        <div class="field">
+          <label for="pax-children">Enfants</label>
+          <input type="number" id="pax-children" min="0" max="8" value="0">
+        </div>
       </div>
     </div>
 
