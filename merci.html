@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merci — Les Vols de Ralph</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700;800;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700;800;900&family=Poppins:wght@400;700;900&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#101010; --yellow:#f0e14a; --orange:#d97b3f; --text-light:#8fa3b8; --line: rgba(240,225,74,0.18);
@@ -13,7 +13,30 @@
   body{
     margin:0; background:var(--bg); color:var(--text-light);
     font-family:'Poppins', sans-serif; min-height:100vh;
-    display:flex; align-items:center; justify-content:center; text-align:center;
+    display:flex; flex-direction:column; text-align:center;
+  }
+  header{
+    display:flex; align-items:center; padding:22px 24px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:8px;
+    text-decoration:none;
+    font-weight:900; text-transform:uppercase; letter-spacing:0.05em; font-size:1rem;
+  }
+  .logo-img{height:30px; width:30px; object-fit:contain;}
+  .logo span{
+    font-family:'Cinzel', serif;
+    text-transform:uppercase;
+    font-weight:800;
+    background:linear-gradient(180deg, #fffaf0 0%, #fbe9c6 20%, #f3d190 40%, #e4b667 58%, #f6dfa0 76%, #eecb84 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    text-shadow:1px 2px 3px rgba(0,0,0,0.75), 0 0 16px rgba(244,200,110,0.6);
+  }
+  main{
+    flex:1; display:flex; align-items:center; justify-content:center;
   }
   .card{background:#000; border:1px solid var(--line); border-radius:10px; padding:48px 36px; max-width:480px;}
   .label{color:var(--orange); font-weight:800; text-transform:uppercase; letter-spacing:0.14em; font-size:0.78rem; display:block; margin-bottom:14px;}
@@ -27,11 +50,16 @@
 </style>
 </head>
 <body>
-  <div class="card">
-    <span class="label">Thank you</span>
-    <h1>Merci d'avoir choisi Les Vols de Ralph !</h1>
-    <p>N'oublie pas de vérifier ta boîte mail pour recevoir nos meilleures offres vers l'Afrique de l'Ouest.</p>
-    <a class="btn" href="index.html">Continuer →</a>
-  </div>
+  <header>
+    <a class="logo" href="index.html"><img class="logo-img" src="logo-tete.png" alt="Logo Les Vols de Ralph"><span>Les Vols de Ralph</span></a>
+  </header>
+  <main>
+    <div class="card">
+      <span class="label">Thank you</span>
+      <h1>Merci d'avoir choisi Les Vols de Ralph !</h1>
+      <p>N'oublie pas de vérifier ta boîte mail pour recevoir nos meilleures offres vers l'Afrique de l'Ouest.</p>
+      <a class="btn" href="index.html">Continuer →</a>
+    </div>
+  </main>
 </body>
 </html>

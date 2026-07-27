@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Résultats — Les Vols de Ralph</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800;900&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800;900&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --nuit: #141d33;
@@ -53,10 +53,24 @@
     padding:28px 24px 10px;
   }
   .logo{
-    font-family:'Lexend Deca', sans-serif;
+    display:flex;
+    align-items:center;
+    gap:8px;
     font-weight:700;
     font-size:1.15rem;
     text-decoration:none;
+  }
+  .logo-img{height:30px; width:30px; object-fit:contain;}
+  .logo span{
+    font-family:'Cinzel', serif;
+    text-transform:uppercase;
+    font-weight:800;
+    background:linear-gradient(180deg, #fffaf0 0%, #fbe9c6 20%, #f3d190 40%, #e4b667 58%, #f6dfa0 76%, #eecb84 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    text-shadow:1px 2px 3px rgba(0,0,0,0.75), 0 0 16px rgba(244,200,110,0.6);
   }
   .back-link{
     font-size:0.82rem;
@@ -175,7 +189,7 @@
 <body>
 
 <header>
-  <a class="logo" href="vols-afrique-ouest.html">Les Vols de Ralph</a>
+  <a class="logo" href="vols-afrique-ouest.html"><img class="logo-img" src="logo-tete.png" alt="Logo Les Vols de Ralph"><span>Les Vols de Ralph</span></a>
   <a class="back-link" href="vols-afrique-ouest.html">← Nouvelle recherche</a>
 </header>
 
